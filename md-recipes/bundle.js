@@ -117,14 +117,14 @@ function Category($http, $q, appConfig){
       {
         "_id": "55c736c9f113e899114ce252",
         "title": "coffee",
-        "image": "/assets/images/category/coffee-and-breakfast1.png",
+        "image": "assets/images/category/coffee-and-breakfast1.png",
         "description": "coffee description",
         "__v": 0
       },
       {
         "_id": "55c73b1e93d90748124b41d7",
         "title": "drinks",
-        "image": "/assets/images/category/coffee-and-breakfast1.png",
+        "image": "assets/images/category/coffee-and-breakfast1.png",
         "__v": 0,
         "description": "drinks description"
       }
@@ -761,7 +761,7 @@ function Recipe($http, $q, appConfig){
       {
         "_id": "55c74891dc599ff815235373",
         "title": "Perfect Italian Pizza",
-        "image": "/assets/images/category/italian-pizza.jpg",
+        "image": "assets/images/category/italian-pizza.jpg",
         "description": "Perfect Italian Pizaa Description",
         "__v": 0
       }
