@@ -1,0 +1,18 @@
+html, body {
+  font-family: 'Roboto', sans-serif;
+  font-size:14px;
+  height:100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+md-list .md-button {
+  color: inherit;
+  font-weight: 500;
+  text-align: left;
+  width: 100%;
+}
+
+md-list .md-button.selected {
+color: #03a9f4;
+}
