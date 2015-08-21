@@ -1,0 +1,81 @@
+
+table { 
+    border-collapse: collapse; 
+}
+
+.cv-layout .cv-navigation .mdl-navigation__link {
+	align-items: center;
+    display: flex !important;
+    flex-direction: row;
+}
+
+.cv-navigation .mdl-navigation__link .material-icons {
+    font-size: 24px;
+    margin-right: 32px;
+}
+
+.cv-grid--list .cv-cell {
+	align-items: center;
+    display: flex !important;
+    flex-direction: row;
+}
+
+.cv-grid--list .material-icons {
+	font-size: 36px;
+    margin-right: 32px;
+    /*color: white !important;*/
+}
+
+
+.cv-grid--list .state--pending {
+	border: 1px solid #9E9E9E;
+	color: #9E9E9E;
+}
+
+.cv-grid--list .state--running {
+	border: 1px solid #0D47A1;
+	color: #0D47A1;
+}
+
+.cv-grid--list .state--running {
+	color: #0D47A1;
+}
+
+.cv-grid--list .state--rejected {
+	border: 1px solid #B71C1C;
+}
+
+.cv-grid--list .state--rejected {
+	color: #B71C1C;
+}
+
+.cv-grid--list .state--complete {
+	border: 1px solid #1B5E20;
+	color: #1B5E20;
+}
+
+
+.cv-grid--list .state--complete {
+	color: #1B5E20;
+}
+
+.cv-grid--list .state--accepted {
+	border: 1px solid #4CAF50;
+	color: #4CAF50;
+}
+
+.cv-grid--list .state-color--0 {
+	background-color: #9E9E9E;
+}
+
+.cv-grid--list .state-color--1 {
+	background-color: #1B5E20;
+}
+
+.cv-grid--list .state--running .state-color--1 {
+	background-color: #0D47A1;
+}
+
+.cv-grid--list .state--rejected .state-color---1 {
+	background-color: #B71C1C;
+}
