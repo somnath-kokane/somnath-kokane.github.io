@@ -1,0 +1,12 @@
+[{
+	"depart": "07:05",
+	"from": "New Delhi",
+	"duration": "25h 25m",
+	"arrival": "23:00",
+	"to": "New York",
+	"airline": {
+		"name": "British Airways",
+		"code": "BA-256"
+	},
+	"price": "41966"
+}]

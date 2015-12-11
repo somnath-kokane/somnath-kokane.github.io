@@ -20,6 +20,9 @@
 
 		function getListing(){
 			return $q.when(listing);
+			/*return $http.get('/api/flight/listing').then(function(resp){
+				return resp.data;
+			})*/
 		}
 	}
 
