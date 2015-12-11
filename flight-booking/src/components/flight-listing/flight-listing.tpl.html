@@ -1,0 +1,72 @@
+<div layout='column' layout-margin flex>
+	<form flex>
+	<div layout-sm='column' layout='row' layout-padding>
+		<md-input-container>
+			<label>Round Trip/One Way</label>
+			<md-select ng-model='flightListing.filterData.type'>
+				<md-option ng-repeat='option in ["Round Trip", "One Way"]' value="{{option}}">
+					{{option}}
+				</md-option>
+			</md-select>
+		</md-input-container>
+		<md-input-container>
+			<label>From</label>
+			<md-select ng-model='flightListing.filterData.from'>
+				<md-option ng-repeat='city in flightListing.cities' value="{{city.name}}">
+					{{city.name}}
+				</md-option>
+			</md-select>
+		</md-input-container>
+		<md-input-container>
+			<label>To</label>
+			<md-select ng-model='flightListing.filterData.to'>
+				<md-option ng-repeat='city in flightListing.cities' value="{{city.name}}">
+					{{city.name}}
+				</md-option>
+			</md-select>
+		</md-input-container>
+		<md-input-container>
+			<label>Minimum Price</label>
+			<input type='number' ng-model='flightListing.filterData.minPrice'/>
+		</md-input-container>
+		<md-input-container>
+			<label>Maximum Price</label>
+			<input type='number' ng-model='flightListing.filterData.maxPrice'/>
+		</md-input-container>
+	</div>
+	<div layout-sm='column' layout='row'>
+		<md-datepicker aria-label='Depart Date' name='departDate'
+			md-placeholder='Depart Date'
+			ng-model='flightListing.filterData.departDate'></md-datepicker>
+		<md-datepicker aria-label='Return Date' name='returnDate'
+			md-placeholder='Return Date'
+			ng-model='flightListing.filterData.returnDate'></md-datepicker>
+	</div>
+	</form>
+	<div flex layout='row'>
+		<span class='md-body-2' flex>Depart</span>
+		<span class='md-body-2' flex>Duration</span>
+		<span class='md-body-2' flex>Arrival</span>
+		<span class='md-body-2' flex>Airlines</span>
+		<span flex></span>
+		<span class='md-body-2' flex>Price(Rs.)</span>
+	</div>
+	<md-divider flex></md-divider>
+	<div flex layout='row' ng-repeat='item in flightListing.filterBySearch(flightListing.filterData)'>
+		<span flex>
+			{{item.depart}}<br>
+			<span class='md-body-1'>{{item.from}}</span>
+		</span>
+		<span flex>{{item.duration}}</span>
+		<span flex>
+			{{item.arrival}}<br>
+			<span class='md-body-1'>{{item.to}}</span>
+		</span>
+		<span flex>
+			{{item.airline.name}}<br>
+			{{item.airline.code}}
+		</span>
+		<span flex></span>
+		<span flex>{{item.price}}</span>
+	</div>
+</div>

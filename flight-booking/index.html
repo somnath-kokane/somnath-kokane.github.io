@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Booking</title>
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.css">
+    <style>
+    .md-datepicker-calendar-pane.md-pane-open {
+        background-color: white;
+        border: 1px solid #ccc;
+    }
+    </style>
+    <script src='bower_components/script.js/dist/script.js'></script>
+    <script>
+        $script(['bower_components/angular/angular.js'], function(){
+            $script([
+                'bower_components/angular-ui-router/release/angular-ui-router.js',
+                'bower_components/angular-animate/angular-animate.js',
+                'bower_components/angular-aria/angular-aria.js',
+                'bower_components/angular-material/angular-material.js',
+                'src/app.js'
+            ], function(){
+                $script([
+                    'src/components/flight-search/flight-search.js',
+                    'src/components/flight-listing/flight-listing.js'
+                ], function(){
+                    angular.element(document).ready(function(){
+                        angular.bootstrap(document, ['flightBooking'])
+                    });
+                })
+                
+            })
+        });
+    </script>
+</head>
+<body>
+    <md-toolbar>
+        <div class='md-toolbar-tools'>
+            <span ng-bind='brand'>LOADING ... ... </span>
+            <span flex></span>
+        </div>
+    </md-toolbar>
+    <div ui-view layout='column' flex>
+        
+    </div>
+</body>
+</html>
