@@ -1,61 +1,61 @@
 <md-toolbar class='md-accent' layout-padding>
-	<md-tabs md-selected="flightSearch.selectedIndex" md-stretch-tabs='always'>
-		<md-tab>
-			<md-tab-label>
-				<a ng-click='flightSearch.showReturnDate=true'>Round Trip</a>
-			</md-tab-label>
-		</md-tab>
-		<md-tab>
-			<md-tab-label>
-				<a ng-click='flightSearch.showReturnDate=false'>One Way</a>
-			</md-tab-label>
-		</md-tab>
-	</md-tabs>
+  <md-tabs md-selected="flightSearch.selectedIndex" md-stretch-tabs='always'>
+    <md-tab>
+      <md-tab-label>
+        <a ng-click='flightSearch.showReturnDate=true'>Round Trip</a>
+      </md-tab-label>
+    </md-tab>
+    <md-tab>
+      <md-tab-label>
+        <a ng-click='flightSearch.showReturnDate=false'>One Way</a>
+      </md-tab-label>
+    </md-tab>
+  </md-tabs>
 </md-toolbar>
 <md-content layout-padding>
-	<form name='flightSearchForm' autocomplete='off' novalidate 
-		ng-submit='flightSearchForm.$valid && flightSearch.onSubmit(flightSearch.data)'>
-		
-		<span class='md-subtitle'>From</span>
-		<md-input-container>
-			<label>City or Airport</label>
-			<md-select ng-model='flightSearch.data.from' name='from' required>
-				<md-option ng-repeat='city in flightSearch.cities' value='{{city.name}}'>
-					{{city.name}}
-				</md-option>
-			</md-select>
-		</md-input-container>
-		<span class='md-subtitle'>To</span>
-		<md-input-container>
-			<label>City or Airport</label>
-			<md-select ng-model='flightSearch.data.to' name='to' required>
-			<md-option ng-repeat='city in flightSearch.cities' value='{{city.name}}'>
-				{{city.name}}
-			</md-option>
-			</md-select>
-		</md-input-container>
-		<span class='md-subtitle'>Depart Date</span>
-		<md-input-container>
-			<md-datepicker aria-label='Depart Date' name='departDate'
-				md-placeholder='Depart Date'
-				ng-model='flightSearch.data.departDate'
-				md-min-date='flightSearch.minDate'></md-datepicker>
-		</md-input-container>
-		<span class='md-subtitle' ng-if='flightSearch.showReturnDate'>Return Date</span>
-		<md-input-container ng-if='flightSearch.showReturnDate'>
-			<md-datepicker aria-label='Return Date'
-				md-placeholder='Return Date'
-				ng-model='flightSearch.data.returnDate' name='returnDate'
-				md-min-date='flightSearch.model.departDate'></md-datepicker>
-		</md-input-container>
-		<md-input-container>
-			<label>Passengers</label>
-			<input type='number' name='passengers' ng-model='flightSearch.data.passengers'>
-		</md-input-container>
-		<div class='md-tools' layout='row'>
-			<span flex></span>
-			<md-button class='md-primary md-raised' 
-				aria-label='Find Flights' ng-disabled='flightSearchForm.$invalid'>Find Flights</md-button>
-		</div>
-	</form>
+  <form name='flightSearchForm' autocomplete='off' novalidate 
+    ng-submit='flightSearchForm.$valid && flightSearch.onSubmit(flightSearch.data)'>
+    
+    <span class='md-subtitle'>From</span>
+    <md-input-container>
+      <label>City or Airport</label>
+      <md-select ng-model='flightSearch.data.from' name='from' required>
+        <md-option ng-repeat='city in flightSearch.cities' value='{{city.name}}'>
+          {{city.name}}
+        </md-option>
+      </md-select>
+    </md-input-container>
+    <span class='md-subtitle'>To</span>
+    <md-input-container>
+      <label>City or Airport</label>
+      <md-select ng-model='flightSearch.data.to' name='to' required>
+      <md-option ng-repeat='city in flightSearch.cities' value='{{city.name}}'>
+        {{city.name}}
+      </md-option>
+      </md-select>
+    </md-input-container>
+    <span class='md-subtitle'>Depart Date</span>
+    <md-input-container>
+      <md-datepicker aria-label='Depart Date' name='departDate'
+        md-placeholder='Depart Date'
+        ng-model='flightSearch.data.departDate'
+        md-min-date='flightSearch.minDate'></md-datepicker>
+    </md-input-container>
+    <span class='md-subtitle' ng-if='flightSearch.showReturnDate'>Return Date</span>
+    <md-input-container ng-if='flightSearch.showReturnDate'>
+      <md-datepicker aria-label='Return Date'
+        md-placeholder='Return Date'
+        ng-model='flightSearch.data.returnDate' name='returnDate'
+        md-min-date='flightSearch.model.departDate'></md-datepicker>
+    </md-input-container>
+    <md-input-container>
+      <label>Passengers</label>
+      <input type='number' name='passengers' ng-model='flightSearch.data.passengers'>
+    </md-input-container>
+    <div class='md-tools' layout='row'>
+      <span flex></span>
+      <md-button class='md-primary md-raised' 
+        aria-label='Find Flights' ng-disabled='flightSearchForm.$invalid'>Find Flights</md-button>
+    </div>
+  </form>
 </md-content>

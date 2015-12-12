@@ -1,11 +1,11 @@
 (function(){
 
-	angular
-		.module('flightBooking')
-		.factory('FlightSearchService', ['$q', FlightSearchService])
-		.directive('flightSearch', [flightSearchDirective]);
+    angular
+        .module('flightBooking')
+        .factory('FlightSearchService', ['$q', FlightSearchService])
+        .directive('flightSearch', [flightSearchDirective]);
 
-	function flightSearchDirective($rootScope){
+    function flightSearchDirective($rootScope){
         return {
             restrict: 'E',
             templateUrl: 'src/components/flight-search/flight-search.tpl.html',

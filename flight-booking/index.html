@@ -12,25 +12,32 @@
     </style>
     <script src='bower_components/script.js/dist/script.js'></script>
     <script>
-        $script(['bower_components/angular/angular.js'], function(){
-            $script([
-                'bower_components/angular-ui-router/release/angular-ui-router.js',
-                'bower_components/angular-animate/angular-animate.js',
-                'bower_components/angular-aria/angular-aria.js',
-                'bower_components/angular-material/angular-material.js',
-                'src/app.js'
-            ], function(){
-                $script([
-                    'src/components/flight-search/flight-search.js',
-                    'src/components/flight-listing/flight-listing.js'
-                ], function(){
-                    angular.element(document).ready(function(){
-                        angular.bootstrap(document, ['flightBooking'])
-                    });
-                })
-                
-            })
-        });
+        $script('bower_components/angular/angular.js','angular', ngDeps);
+        function ngDeps(){
+            $script('bower_components/angular-ui-router/release/angular-ui-router.js', 'ui-router');
+            $script('bower_components/angular-animate/angular-animate.js', 'angular-animate');
+            $script('bower_components/angular-aria/angular-aria.js', 'angular-aria');
+            $script.ready(['ui-router', 'angular-animate', 'angular-aria'], ngMaterialLoad);
+        }
+        function ngMaterialLoad(){
+            $script('bower_components/angular-material/angular-material.js', 'angular-material');
+            $script.ready('angular-material', appLoad);
+        }
+        function appLoad(){
+            $script('src/app.js', 'app');
+            $script.ready('app', componentsLoad);
+        }   
+        function componentsLoad(){
+            $script('src/components/flight-search/flight-search.js', 'flight-search');
+            $script('src/components/flight-listing//flight-listing.js', 'flight-listing');
+            $script.ready(['flight-listing', 'flight-search'], bootstrap)
+        }
+        
+        function bootstrap(){
+            angular.element(document).ready(function(){
+                angular.bootstrap(document, ['flightBooking'])
+            });
+        }
     </script>
 </head>
 <body>
